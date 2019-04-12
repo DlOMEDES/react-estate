@@ -1,26 +1,9 @@
 import React, { Component } from 'react';
-import { createGlobalStyle } from 'styled-components';
+import { GlobalStyle } from './utils/GLobals';
 import Navbar from './components/nav/Navbar';
-
-const GlobalStyle = createGlobalStyle`
-  html {
-    box-sizing: border-box;
-    font-size: 62.5%;
-  }
-
-  body {
-    @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700"');
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 1.6rem;
-  }
-
-  ul, li, a {
-    text-decoration: none;
-    color: inherit;
-  }
-  `;
+import Filter from './components/layout/Filter';
+import Listings from './components/layout/Listings';
+import ContentSection from './components/layout/ContentSection';
 
 export default class App extends Component {
   render() {
@@ -28,9 +11,11 @@ export default class App extends Component {
       <React.Fragment>
         <GlobalStyle />
         <Navbar />
+        <ContentSection>
+          <Filter />
+          <Listings />
+        </ContentSection>
       </React.Fragment>
     );
   }
 }
-
-// export default App;

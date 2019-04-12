@@ -2,6 +2,26 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../utils/Colors';
 
+export default class Navbar extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Header>
+          <Logo href="#">Logo</Logo>
+          <Nav>
+            <Navlinks href="#">Create Ads</Navlinks>
+            <Navlinks href="#">About Us</Navlinks>
+            <Navlinks href="#">Log in</Navlinks>
+            <Navlinks href="#" className="registerBtn">
+              Register
+            </Navlinks>
+          </Nav>
+        </Header>
+      </React.Fragment>
+    );
+  }
+}
+
 const Header = styled.header`
   display: flex;
   padding: 2rem 3rem;
@@ -11,7 +31,7 @@ const Header = styled.header`
   color: ${Colors.white};
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
   width: 50px;
 `;
 
@@ -40,23 +60,3 @@ const Navlinks = styled.a`
     color: ${Colors.highlight};
   }
 `;
-
-export default class Navbar extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Header>
-          <Logo>Logo</Logo>
-          <Nav>
-            <Navlinks href="#">Create Ads</Navlinks>
-            <Navlinks href="#">About Us</Navlinks>
-            <Navlinks href="#">Log in</Navlinks>
-            <Navlinks href="#" className="registerBtn">
-              Register
-            </Navlinks>
-          </Nav>
-        </Header>
-      </React.Fragment>
-    );
-  }
-}

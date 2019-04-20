@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { GlobalStyle } from './utils/GLobals';
 import Navbar from './components/nav/Navbar';
-import Filter from './components/layout/Filter';
-import Listings from './components/layout/Listings';
+import Filtering from './components/filter/Filtering';
+import Listings from './components/listing/Listings';
 import ContentSection from './components/layout/ContentSection';
 
 export default class App extends Component {
@@ -12,7 +12,7 @@ export default class App extends Component {
         <GlobalStyle />
         <Navbar />
         <ContentSection>
-          <Filter />
+          <Filtering />
           <Listings />
         </ContentSection>
       </React.Fragment>

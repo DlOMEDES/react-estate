@@ -1,8 +1,9 @@
 // COLORS
 export const Colors = {
-  golden: '#fad580',
+  golden: '#f3a557',
   blueBG: '#1f2531',
-  ctaBrown: '#f19e73',
-  highlight: '#bd7f62',
-  white: '#ffffff'
+  ctaBrown: '#e89971',
+  highYellow: '#dfc02d',
+  white: '#ffffff',
+  lightGrey: '#f9f7f6'
 };

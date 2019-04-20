@@ -46,17 +46,17 @@ const Navlinks = styled.a`
   font-size: 1.5rem;
 
   &.registerBtn {
-    background: ${Colors.ctaBrown};
+    background: ${Colors.golden};
     padding: 0.5rem 2rem;
     text-align: center;
     border-radius: 0.2rem;
     &:hover {
-      background: ${Colors.highlight};
+      background: ${Colors.ctaBrown};
       color: ${Colors.white};
     }
   }
 
   &:hover {
-    color: ${Colors.highlight};
+    color: ${Colors.ctaBrown};
   }
 `;

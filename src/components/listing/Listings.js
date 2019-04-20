@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import SearchListings from './SearchListings';
-import SortListings from './SortListings';
-import ListingResults from './ListingResults';
-import ListingPages from './ListingPages';
+import SearchBar from './SearchBar';
+import Sorting from './Sorting';
+import Results from './Results';
+import Pagination from './Pagination';
 
 export default class Listings extends Component {
   render() {
     return (
       <ListingsWrapper>
-        <SearchListings />
-        <SortListings />
-        <ListingResults />
-        <ListingPages />
+        <SearchBar />
+        <Sorting />
+        <Results />
+        <Pagination />
       </ListingsWrapper>
     );
   }

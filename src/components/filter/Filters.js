@@ -7,23 +7,23 @@ const Filters = () => {
       <FilterContainer>
         <h4>Filters</h4>
         <FilterLabel>
-          <Filter name="neighbourhood">
+          <Select name="neighbourhood">
             <option>Neighbourhood</option>
             <option>Philadelphia</option>
             <option>New York</option>
-          </Filter>
-          <Filter name="hometype">
+          </Select>
+          <Select name="hometype">
             <option>Home Type</option>
             <option>Studio</option>
             <option>House</option>
             <option>Ranch</option>
-          </Filter>
-          <Filter name="bedrooms">
+          </Select>
+          <Select name="bedrooms">
             <option>Bedrooms</option>
             <option>1 Bedroom</option>
             <option>2 Bedrooms</option>
             <option>3+ Bedrooms</option>
-          </Filter>
+          </Select>
         </FilterLabel>
       </FilterContainer>
     </React.Fragment>
@@ -45,7 +45,7 @@ const FilterLabel = styled.label`
   flex-direction: column;
 `;
 
-const Filter = styled.select`
+const Select = styled.select`
   border: 1px solid lightgrey;
   padding: 0.7rem;
   font-size: 1.6rem;

@@ -1,17 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SearchListings = () => {
+const SearchBar = () => {
   return (
     <React.Fragment>
       <SearchContainer>
-        <h3>Search Listings</h3>
+        <Search>
+          <input type="text" name="search" placeholder="Search Listings" />
+        </Search>
       </SearchContainer>
     </React.Fragment>
   );
 };
-export default SearchListings;
+export default SearchBar;
 
 const SearchContainer = styled.section`
   background: limegreen;
 `;
+
+const Search = styled.section``;

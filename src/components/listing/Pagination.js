@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ListingPages = () => {
+const Pagination = () => {
   return (
     <React.Fragment>
-      <Pagination>
+      <PagesContainer>
         <h3>Pagination</h3>
-      </Pagination>
+      </PagesContainer>
     </React.Fragment>
   );
 };
 
-export default ListingPages;
+export default Pagination;
 
-const Pagination = styled.section`
+const PagesContainer = styled.section`
   background: lightgrey;
 `;

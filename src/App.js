@@ -4,6 +4,8 @@ import Navbar from './components/nav/Navbar';
 import Filtering from './components/filter/Filtering';
 import Listings from './components/listing/Listings';
 import ContentSection from './components/layout/ContentSection';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBed, faThList, faTh } from '@fortawesome/free-solid-svg-icons';
 
 export default class App extends Component {
   render() {
@@ -19,3 +21,4 @@ export default class App extends Component {
     );
   }
 }
+library.add(faBed, faThList, faTh);

@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import Sorting from './Sorting';
 import Results from './Results';
 import Pagination from './Pagination';
+// import { Colors } from '../../utils/Colors';
 
 export default class Listings extends Component {
   render() {
@@ -19,5 +20,5 @@ export default class Listings extends Component {
 }
 
 const ListingsWrapper = styled.section`
-  background: firebrick;
+  padding: 2rem;
 `;

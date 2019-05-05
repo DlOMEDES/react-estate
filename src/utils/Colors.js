@@ -5,5 +5,7 @@ export const Colors = {
   ctaBrown: '#e89971',
   highYellow: '#dfc02d',
   white: '#ffffff',
-  lightGrey: '#f9f7f6'
+  lightGrey: '#f9f7f6',
+  greysBlue: '#3f4654',
+  darkGrey: '#323234'
 };

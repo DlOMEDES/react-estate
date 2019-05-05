@@ -5,7 +5,15 @@ const Pagination = () => {
   return (
     <React.Fragment>
       <PagesContainer>
-        <h3>Pagination</h3>
+        <PageNumbers>
+          <li>Prev</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>Next</li>
+        </PageNumbers>
       </PagesContainer>
     </React.Fragment>
   );
@@ -13,6 +21,7 @@ const Pagination = () => {
 
 export default Pagination;
 
+const PageNumbers = styled.ul``;
 const PagesContainer = styled.section`
   background: lightgrey;
 `;

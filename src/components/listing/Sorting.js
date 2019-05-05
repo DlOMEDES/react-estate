@@ -6,17 +6,24 @@ const Sorting = () => {
   return (
     <React.Fragment>
       <SortContainer>
-        <p>420 Results Found</p>
+        <Found>
+          <p>420 Results Found</p>
+        </Found>
         <SortOptions>
           <SelectSort>
             <option value="price-asc">Highest Price</option>
             <option value="price-dsc">Lowest Price</option>
           </SelectSort>
+          <View>
+            <FontAwesomeIcon
+              icon="th-list"
+              color="lightGrey"
+              size="lg"
+              className="th-list"
+            />
+            <FontAwesomeIcon icon="th" color="black" size="lg" />
+          </View>
         </SortOptions>
-        <View>
-          <FontAwesomeIcon icon="th-list" color="black" size="lg" />
-          <FontAwesomeIcon icon="th" color="black" size="lg" />
-        </View>
       </SortContainer>
     </React.Fragment>
   );
@@ -24,9 +31,20 @@ const Sorting = () => {
 
 export default Sorting;
 
+const Found = styled.div``;
+
 const SortContainer = styled.section`
-  background: palevioletred;
+  display: flex;
+  justify-content: space-between;
+}
 `;
-const View = styled.div``;
-const SortOptions = styled.div``;
+const View = styled.div`
+  .th-list {
+    margin: 0 1rem;
+  }
+`;
+const SortOptions = styled.div`
+  display: flex;
+  align-items: center;
+`;
 const SelectSort = styled.select``;

@@ -24,7 +24,7 @@ export default class Navbar extends Component {
 
 const Header = styled.header`
   display: flex;
-  padding: 2rem 3rem;
+  padding: 1.5rem 3rem;
   justify-content: space-between;
   align-items: center;
   background: ${Colors.blueBG};

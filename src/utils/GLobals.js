@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700"');
+    @import url('https://fonts.googleapis.com/css?family=Nunito:700,400,300"');
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;

@@ -36,7 +36,7 @@ const Found = styled.div``;
 const SortContainer = styled.section`
   display: flex;
   justify-content: space-between;
-}
+  margin-bottom: 3rem;
 `;
 const View = styled.div`
   .th-list {

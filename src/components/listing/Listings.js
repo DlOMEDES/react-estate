@@ -18,7 +18,6 @@ export default class Listings extends Component {
     );
   }
 }
-
 const ListingsWrapper = styled.section`
-  padding: 2rem;
+  padding: 1.5rem 3rem;
 `;

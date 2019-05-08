@@ -15,9 +15,7 @@ const SearchBar = () => {
 };
 export default SearchBar;
 
-const SearchContainer = styled.section`
-  /* background: limegreen; */
-`;
+const SearchContainer = styled.section``;
 
 const Search = styled.section`
   input {

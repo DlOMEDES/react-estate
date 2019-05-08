@@ -7,26 +7,30 @@ export default class Navbar extends Component {
     return (
       <React.Fragment>
         <Header>
-          <Logo href="#">Logo</Logo>
-          <Nav>
-            <Navlinks href="#">Create Ads</Navlinks>
-            <Navlinks href="#">About Us</Navlinks>
-            <Navlinks href="#">Log in</Navlinks>
-            <Navlinks href="#" className="registerBtn">
-              Register
-            </Navlinks>
-          </Nav>
+          <NavContainer>
+            <Logo href="#">Logo</Logo>
+            <Nav>
+              <Navlinks href="#">Create Ads</Navlinks>
+              <Navlinks href="#">About Us</Navlinks>
+              <Navlinks href="#">Log in</Navlinks>
+              <Navlinks href="#" className="registerBtn">
+                Register
+              </Navlinks>
+            </Nav>
+          </NavContainer>
         </Header>
       </React.Fragment>
     );
   }
 }
-
-const Header = styled.header`
+const NavContainer = styled.div`
+  padding: 2rem 3rem;
   display: flex;
-  padding: 1.5rem 3rem;
   justify-content: space-between;
   align-items: center;
+  font-weight: 700;
+`;
+const Header = styled.header`
   background: ${Colors.blueBG};
   color: ${Colors.white};
 `;

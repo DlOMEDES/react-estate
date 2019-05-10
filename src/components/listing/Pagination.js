@@ -42,5 +42,5 @@ const PageNumbers = styled.ul`
 const PagesContainer = styled.section`
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin: 3rem 0;
 `;

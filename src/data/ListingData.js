@@ -1,27 +1,27 @@
 const ListingData = [
   {
-    address: '22-12 brick street',
-    city: 'Philadelphia',
-    state: 'PA',
+    address: 'undisclosed Address',
+    city: 'Miami',
+    state: 'FL',
     rooms: '2',
-    price: '$1200',
-    floorspace: '180',
+    price: '$175,000',
+    floorspace: '1152',
     extras: ['elevator', 'gym'],
     hometype: 'apartment',
     image:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/modern-house-1-1538579609.jpg?crop=0.713xw:1.00xh;0.0207xw,0&resize=480:*'
+      'https://photos.zillowstatic.com/cc_ft_768/ISa5a88o3cd4n81000000000.webp'
   },
   {
-    address: '4425 East Pen',
-    city: 'Philadelphia',
-    state: 'PA',
-    rooms: '3',
-    price: '$88,000',
-    floorspace: '1,920',
+    address: '1186 NW 56th ST',
+    city: 'Miami',
+    state: 'FL',
+    rooms: '2',
+    price: '$78,000',
+    floorspace: '720',
     extras: ['elevator', 'gym'],
     hometype: 'home',
     image:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/modern-house-1-1538579609.jpg?crop=0.713xw:1.00xh;0.0207xw,0&resize=480:*'
+      'https://photos.zillowstatic.com/cc_ft_768/IS6eeehboq5h4a1000000000.webp'
   },
   {
     address: '1238 Ripley St',

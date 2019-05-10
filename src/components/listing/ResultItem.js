@@ -2,41 +2,46 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../utils/Colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ListingData from '../../data/ListingData';
 
 const ResultItem = () => {
   return (
     <React.Fragment>
-      <List>
-        <ListImage>
-          <Address>350 G Street</Address>
-          <Details>
-            <UserDetails>
-              <UserImg />
-              <UserInfo>
-                <Name>President Trump</Name>
-                <PostDate>Posted on 05/19/19</PostDate>
-              </UserInfo>
-            </UserDetails>
-            <ListDetails>
-              <Space>
-                <p>200 ft&sup2;</p>
-              </Space>
-              <Bedrooms>
-                <FontAwesomeIcon icon="bed" />
-                <span>3 Bedrooms unit</span>
-              </Bedrooms>
-              <ViewButton>View Listing</ViewButton>
-            </ListDetails>
-          </Details>
-        </ListImage>
-        <BottomInfo>
-          <Pricing>$100 / per month</Pricing>
-          <Location>
-            <FontAwesomeIcon icon="map-marker-alt" size="" />
-            <p>Ridgewood, NY</p>
-          </Location>
-        </BottomInfo>
-      </List>
+      {ListingData.map((listing, index) => (
+        <List key={index}>
+          <ListImage style={{ backgroundImage: `url('${listing.image}')` }}>
+            <Address>{listing.address}</Address>
+            <Details>
+              <UserDetails>
+                <UserImg />
+                <UserInfo>
+                  <Name>President Trump</Name>
+                  <PostDate>Posted on 05/19/19</PostDate>
+                </UserInfo>
+              </UserDetails>
+              <ListDetails>
+                <Space>
+                  <p>200 ft&sup2;</p>
+                </Space>
+                <Bedrooms>
+                  <FontAwesomeIcon icon="bed" />
+                  <span>{listing.rooms}</span>
+                </Bedrooms>
+                <ViewButton>View Listing</ViewButton>
+              </ListDetails>
+            </Details>
+          </ListImage>
+          <BottomInfo>
+            <Pricing>{listing.price}</Pricing>
+            <Location>
+              <FontAwesomeIcon icon="map-marker-alt" size="lg" />
+              <p>
+                {listing.city}, {listing.state}
+              </p>
+            </Location>
+          </BottomInfo>
+        </List>
+      ))}
     </React.Fragment>
   );
 };
@@ -61,8 +66,9 @@ const ListImage = styled.div`
   padding: 1.5rem;
   position: relative;
   height: 18rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
-    url('https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg');
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
+    url('https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg'); */
+  background-image: url('${ListingData.image}');
   background-size: cover;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -136,6 +142,9 @@ const Space = styled.div`
 `;
 const Bedrooms = styled.div`
   /* background: brown; */
+  span {
+    margin-left: 0.5rem;
+  }
 `;
 const ViewButton = styled.button`
   margin-top: 1rem;

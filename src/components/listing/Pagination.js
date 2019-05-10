@@ -7,8 +7,8 @@ const Pagination = () => {
     <React.Fragment>
       <PagesContainer>
         <PageNumbers>
-          <ListItem className="active">Prev</ListItem>
-          <ListItem>1</ListItem>
+          <ListItem>Prev</ListItem>
+          <ListItem className="active">1</ListItem>
           <ListItem>2</ListItem>
           <ListItem>3</ListItem>
           <ListItem>4</ListItem>

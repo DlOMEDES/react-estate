@@ -10,14 +10,20 @@ export default class Filtering extends Component {
   render() {
     return (
       <FilteringContainer>
-        <Filters />
-        <Prices />
-        <FloorSpace />
-        <Extras />
+        <Wrapper>
+          <Filters />
+          <Prices />
+          <FloorSpace />
+          <Extras />
+        </Wrapper>
       </FilteringContainer>
     );
   }
 }
+
+const Wrapper = styled.div`
+  position: fixed;
+`;
 
 const FilteringContainer = styled.section`
   display: flex;

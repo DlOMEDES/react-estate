@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../utils/Colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import faker from 'faker';
 const ResultItem = props => {
+  const avatar = faker.image.avatar;
+  console.log(avatar());
   return (
     <React.Fragment>
-      {props.ListingData.map(listing => {
+      {props.ListingData.map((listing, index) => {
         let image = listing.image;
         return (
           <List key={listing.address}>
@@ -18,14 +20,17 @@ const ResultItem = props => {
               <Address>{listing.address}</Address>
               <Details>
                 <UserDetails>
-                  <UserImg />
+                  <UserImg style={{ backgroundImage: `url(${avatar()})` }} />
                   <UserInfo>
-                    <Name>President Trump</Name>
-                    <PostDate>Posted on 05/19/19</PostDate>
+                    <Name>
+                      {faker.name.firstName()}, {faker.name.lastName()}
+                    </Name>
+                    <PostDate>Posted on {faker.date.month()}</PostDate>
                   </UserInfo>
                 </UserDetails>
                 <ListDetails>
                   <Space>
+                    <FontAwesomeIcon icon="square" />
                     <p>{listing.floorspace} ft&sup2;</p>
                   </Space>
                   <Bedrooms>
@@ -112,7 +117,7 @@ const UserImg = styled.div`
   border-radius: 50%;
   border: 1px solid ${Colors.white};
   display: inline-block;
-  background-image: url('https://www.telegraph.co.uk/content/dam/news/2017/11/22/TELEMMGLPICT000147365976_trans_NvBQzQNjv4Bq3XmyF3YIL3K1caQxZsZv2Ssm-UOV8_Q90I8_c5Af0yY.jpeg?imwidth=450');
+  /* background-image: url('https://www.telegraph.co.uk/content/dam/news/2017/11/22/TELEMMGLPICT000147365976_trans_NvBQzQNjv4Bq3XmyF3YIL3K1caQxZsZv2Ssm-UOV8_Q90I8_c5Af0yY.jpeg?imwidth=450'); */
   background-size: cover;
 `;
 const UserInfo = styled.div`
@@ -137,9 +142,10 @@ const PostDate = styled.span`
 
 const Space = styled.div`
   margin-bottom: 0.5rem;
-
+  display: flex;
+  align-items: center;
   p {
-    margin: 0;
+    margin: 0 0 0 0.5rem;
   }
 `;
 const Bedrooms = styled.div`

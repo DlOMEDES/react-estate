@@ -7,11 +7,22 @@ import FloorSpace from './FloorSpace';
 import Extras from './Extras';
 
 export default class Filtering extends Component {
+
+  state = {
+    name: '',
+    value: '',
+    input: ''
+  }
+
+  handleChange(event) {
+    const {input} = this.state;
+   this.setState({[input]: event.target.value})
+  }
   render() {
     return (
       <FilteringContainer>
         <Wrapper>
-          <Filters />
+          <Filters handleChange={this.handleChange}/>
           <Prices />
           <FloorSpace />
           <Extras />
@@ -22,7 +33,7 @@ export default class Filtering extends Component {
 }
 
 const Wrapper = styled.div`
-  position: fixed;
+  
 `;
 
 const FilteringContainer = styled.section`

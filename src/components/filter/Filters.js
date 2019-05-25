@@ -1,33 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Filters = () => {
-  return (
-    <React.Fragment>
-      <FilterContainer>
-        <h4>Filters</h4>
-        <FilterLabel>
-          <Select name="neighbourhood">
-            <option>Neighbourhood</option>
-            <option>Philadelphia</option>
-            <option>New York</option>
-          </Select>
-          <Select name="hometype">
-            <option>Home Type</option>
-            <option>Studio</option>
-            <option>House</option>
-            <option>Ranch</option>
-          </Select>
-          <Select name="bedrooms">
-            <option>Bedrooms</option>
-            <option>1 Bedroom</option>
-            <option>2 Bedrooms</option>
-            <option>3+ Bedrooms</option>
-          </Select>
-        </FilterLabel>
-      </FilterContainer>
-    </React.Fragment>
-  );
+class Filters extends React.Component {
+
+  // constructor(props) {
+  //   super(props);
+
+  //   // this.handleChange=this.handleChange.bind(this);
+  // }
+
+  render() {
+    return (
+      <React.Fragment>
+        <FilterContainer>
+          <h4>Filters</h4>
+          <FilterLabel>
+            <Select name="neighbourhood" onChange={this.props.handleChange}>
+              <option>Neighbourhood</option>
+              <option>Philadelphia</option>
+              <option>New York</option>
+            </Select>
+            <Select name="hometype">
+              <option>Home Type</option>
+              <option>Studio</option>
+              <option>House</option>
+              <option>Ranch</option>
+            </Select>
+            <Select name="bedrooms">
+              <option>Bedrooms</option>
+              <option>1 Bedroom</option>
+              <option>2 Bedrooms</option>
+              <option>3+ Bedrooms</option>
+            </Select>
+          </FilterLabel>
+        </FilterContainer>
+      </React.Fragment>
+    );
+  }
 };
 
 export default Filters;

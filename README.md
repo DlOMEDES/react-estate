@@ -1,7 +1,8 @@
 ## React-Estate
 
-is a simple realestate app boostrapped with create react app.
+A small realestate app boostrapped with create react app.
 
 ### Script available
 
-- npm run
+- npm install all dependencies
+- (optional: BROWSER=firefox) npm start

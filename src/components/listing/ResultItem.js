@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import faker from 'faker';
 const ResultItem = props => {
   const avatar = faker.image.avatar;
-  console.log(avatar());
+
   return (
     <React.Fragment>
       {props.ListingData.map((listing, index) => {

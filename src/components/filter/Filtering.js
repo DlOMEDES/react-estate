@@ -7,17 +7,19 @@ import FloorSpace from './FloorSpace';
 import Extras from './Extras';
 
 export default class Filtering extends Component {
+  
 
-  state = {
-    name: '',
-    value: '',
-    input: ''
-  }
+  handleChange = this.handleChange.bind(this)
 
   handleChange(event) {
-    const {input} = this.state;
-   this.setState({[input]: event.target.value})
+    let name = event.target.name;
+    let value = event.target.value;
+
+   this.setState({
+     [name]:value
+   }, () => console.log(this.state))
   }
+
   render() {
     return (
       <FilteringContainer>

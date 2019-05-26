@@ -3,12 +3,6 @@ import styled from 'styled-components';
 
 class Filters extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-
-  //   // this.handleChange=this.handleChange.bind(this);
-  // }
-
   render() {
     return (
       <React.Fragment>
@@ -20,13 +14,13 @@ class Filters extends React.Component {
               <option>Philadelphia</option>
               <option>New York</option>
             </Select>
-            <Select name="hometype">
+            <Select name="hometype" onChange={this.props.handleChange}>
               <option>Home Type</option>
               <option>Studio</option>
               <option>House</option>
               <option>Ranch</option>
             </Select>
-            <Select name="bedrooms">
+            <Select name="bedrooms" onChange={this.props.handleChange}>
               <option>Bedrooms</option>
               <option>1 Bedroom</option>
               <option>2 Bedrooms</option>

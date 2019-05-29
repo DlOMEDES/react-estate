@@ -8,12 +8,16 @@ import Extras from './Extras';
 
 export default class Filtering extends Component {
   
+  state = {
+    minPrice: 0,
+    maxPrice: 100000000,
+    minFloorSpace: 0,
+    maxFloorSpace: 9000
+  }
 
-  handleChange = this.handleChange.bind(this)
-
-  handleChange(event) {
+  handleChange = (event) => {
     let name = event.target.name;
-    let value = event.target.value;
+    let value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value;
 
    this.setState({
      [name]:value
@@ -23,11 +27,11 @@ export default class Filtering extends Component {
   render() {
     return (
       <FilteringContainer>
-        <Wrapper>
+        <Wrapper >
           <Filters handleChange={this.handleChange}/>
-          <Prices />
-          <FloorSpace />
-          <Extras />
+          <Prices handleChange={this.handleChange} globalState={this.state}/>
+          <FloorSpace handleChange={this.handleChange} globalState={this.state}/>
+          <Extras handleChange={this.handleChange} globalState={this.state}/>
         </Wrapper>
       </FilteringContainer>
     );

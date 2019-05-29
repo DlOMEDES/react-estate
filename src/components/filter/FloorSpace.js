@@ -1,19 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FloorSpace = () => {
-  return (
-    <React.Fragment>
-      <FloorContainer>
-        <h4>Floor Space</h4>
-        <FloorLabel htmlFor="FloorSpace">
-          <input type="text" name="min-space" />
-          <input type="text" name="max-space" />
-        </FloorLabel>
-      </FloorContainer>
-    </React.Fragment>
-  );
-};
+class FloorSpace extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <FloorContainer>
+          <h4>Floor Space</h4>
+          <FloorLabel htmlFor="FloorSpace">
+            <input type="text" name="minFloorSpace" onChange={this.props.handleChange} value={this.props.globalState.minFloorSpace}/>
+            <input type="text" name="maxFloorSpace" onChange={this.props.handleChange} value={this.props.globalState.maxFloorSpace}/>
+          </FloorLabel>
+        </FloorContainer>
+      </React.Fragment>
+    );
+  }
+}
 
 export default FloorSpace;
 

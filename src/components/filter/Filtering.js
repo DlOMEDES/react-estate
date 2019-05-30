@@ -12,9 +12,13 @@ export default class Filtering extends Component {
     minPrice: 0,
     maxPrice: 100000000,
     minFloorSpace: 0,
-    maxFloorSpace: 9000
+    maxFloorSpace: 9000,
+    elevator: false,
+    swimmingPool: false,
+    finishedBasement: false,
+    gym: false
   }
-
+  
   handleChange = (event) => {
     let name = event.target.name;
     let value = (event.target.type === 'checkbox') ? event.target.checked : event.target.value;

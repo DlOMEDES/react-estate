@@ -2,17 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 class Filters extends React.Component {
-
   render() {
     return (
       <React.Fragment>
         <FilterContainer>
           <h4>Filters</h4>
           <FilterLabel>
-            <Select name="neighbourhood" onChange={this.props.handleChange}>
-              <option>Neighbourhood</option>
-              <option>Philadelphia</option>
-              <option>New York</option>
+            <Select name="Neighbourhood" onChange={this.props.handleChange}>
+              <option value="Neighbourhood">Neighbourhood</option>
+              <option value="Philadelphia">Philadelphia</option>
+              <option value="New York">New York</option>
             </Select>
             <Select name="hometype" onChange={this.props.handleChange}>
               <option>Home Type</option>
@@ -31,7 +30,7 @@ class Filters extends React.Component {
       </React.Fragment>
     );
   }
-};
+}
 
 export default Filters;
 

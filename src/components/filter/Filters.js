@@ -6,24 +6,23 @@ class Filters extends React.Component {
     return (
       <React.Fragment>
         <FilterContainer>
-          <h4>Filters</h4>
+          <h3>Filters</h3>
           <FilterLabel>
-            <Select name="Neighbourhood" onChange={this.props.handleChange}>
-              <option value="Neighbourhood">Neighbourhood</option>
+            <Select name="Neighbourhood" onChange={this.props.inputChange}>
+              <option value="Miami">Miami</option>
               <option value="Philadelphia">Philadelphia</option>
               <option value="New York">New York</option>
             </Select>
-            <Select name="hometype" onChange={this.props.handleChange}>
-              <option>Home Type</option>
+            <Select name="Hometype" onChange={this.props.inputChange}>
+              <option>Apartment</option>
               <option>Studio</option>
               <option>House</option>
               <option>Ranch</option>
             </Select>
-            <Select name="bedrooms" onChange={this.props.handleChange}>
-              <option>Bedrooms</option>
+            <Select name="Bedrooms" onChange={this.props.inputChange}>
               <option>1 Bedroom</option>
               <option>2 Bedrooms</option>
-              <option>3+ Bedrooms</option>
+              <option>3 Bedrooms</option>
             </Select>
           </FilterLabel>
         </FilterContainer>

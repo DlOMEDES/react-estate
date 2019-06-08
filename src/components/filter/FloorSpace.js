@@ -6,10 +6,18 @@ class FloorSpace extends React.Component {
     return (
       <React.Fragment>
         <FloorContainer>
-          <h4>Floor Space</h4>
+          <h3>Floor Space</h3>
           <FloorLabel htmlFor="FloorSpace">
-            <input type="text" name="minFloorSpace" />
-            <input type="text" name="maxFloorSpace" />
+            <input
+              type="text"
+              name="minFloorSpace"
+              onChange={this.props.inputChange}
+            />
+            <input
+              type="text"
+              name="maxFloorSpace"
+              onChange={this.props.inputChange}
+            />
           </FloorLabel>
         </FloorContainer>
       </React.Fragment>

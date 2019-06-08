@@ -23,9 +23,9 @@ import Extras from './components/filter/Extras';
 export default class App extends Component {
   state = {
     minPrice: 0,
-    maxPrice: 100000000,
+    maxPrice: 999999,
     minFloorSpace: 0,
-    maxFloorSpace: 9000,
+    maxFloorSpace: null,
     elevator: false,
     swimmingPool: false,
     finishedBasement: false,
@@ -33,16 +33,17 @@ export default class App extends Component {
     ListingData
   };
 
-  handleChange = e => {
-    const value = e.target.value;
-    const name = e.target.name;
+  inputChange = event => {
+    const target = event.target;
+    const name = target.name;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState(
       {
-        name: value
+        [name]: value
       },
       () => console.log(this.state)
     );
-    // console.log(name);
   };
 
   render() {
@@ -52,10 +53,10 @@ export default class App extends Component {
         <Navbar />
         <ContentSection>
           <FilterContainer>
-            <Filters handleChange={this.handleChange} />
-            <Prices handleChange={this.handleChange} />
-            <FloorSpace handleChange={this.handleChange} />
-            <Extras handleChange={this.handleChange} />
+            <Filters inputChange={this.inputChange} />
+            <Prices inputChange={this.inputChange} globalState={this.state} />
+            <FloorSpace inputChange={this.inputChange} />
+            <Extras inputChange={this.inputChange} />
           </FilterContainer>
           <Listings ListingData={this.state.ListingData} />
         </ContentSection>

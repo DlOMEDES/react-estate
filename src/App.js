@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GlobalStyle } from './utils/GLobals';
+import { GlobalStyle } from './utils/GlobalStyle';
 import Navbar from './components/nav/Navbar';
 // import Filtering from './components/filter/Filtering';
 import Listings from './components/listing/Listings';
@@ -58,7 +58,7 @@ export default class App extends Component {
             <FloorSpace inputChange={this.inputChange} />
             <Extras inputChange={this.inputChange} />
           </FilterContainer>
-          <Listings ListingData={this.state.ListingData} />
+          <Listings ListingData={this.state.ListingData}/>
         </ContentSection>
       </React.Fragment>
     );

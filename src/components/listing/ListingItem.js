@@ -2,57 +2,51 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../../utils/Colors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import faker from 'faker';
-const ResultItem = props => {
-  const avatar = faker.image.avatar;
 
+import faker from 'faker';
+
+const ResultItem = ({...listingProp}) => {
+  const userName = faker.internet.userName();
+  const avatar = faker.internet.avatar();
+  // const date = faker.date.past();
+
+  
   return (
     <React.Fragment>
-      {props.ListingData.map((listing, index) => {
-        let image = listing.image;
-        return (
-          <List key={listing.address}>
-            <ListImage
-              style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${image})`
-              }}
-            >
-              <Address>{listing.address}</Address>
-              <Details>
-                <UserDetails>
-                  <UserImg style={{ backgroundImage: `url(${avatar()})` }} />
-                  <UserInfo>
-                    <Name>
-                      {faker.name.firstName()}, {faker.name.lastName()}
-                    </Name>
-                    <PostDate>Posted on {faker.date.month()}</PostDate>
-                  </UserInfo>
-                </UserDetails>
-                <ListDetails>
-                  <Space>
-                    <FontAwesomeIcon icon="square" />
-                    <p>{listing.floorspace} ft&sup2;</p>
-                  </Space>
-                  <Bedrooms>
-                    <FontAwesomeIcon icon="bed" />
-                    <span>{listing.rooms} Bedrooms</span>
-                  </Bedrooms>
-                  <ViewButton>View Listing</ViewButton>
-                </ListDetails>
-              </Details>
-            </ListImage>
-            <BottomInfo>
-              <Pricing>{listing.price}</Pricing>
-              <Location>
-                <FontAwesomeIcon icon="map-marker-alt" size="lg" />
-                <p>
-                  {listing.city}, {listing.state}
-                </p>
-              </Location>
-            </BottomInfo>
-          </List>
-        );
-      })}
+      <List>
+        <ListImage
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${listingProp.image})`
+          }}>
+          <Address>{listingProp.address}</Address>
+          <Details>
+            <UserDetails>
+              <UserImg src={avatar}/>
+              <UserInfo>
+                <Name>{userName}</Name>
+                <PostDate>Posted on: date here</PostDate>
+              </UserInfo>
+            </UserDetails>
+            <ListDetails>
+              <Space>
+                <p>{listingProp.floorspace}</p>
+              </Space>
+              <Bedrooms>
+                <FontAwesomeIcon icon="bed" />
+                <span>{listingProp.rooms}</span>
+              </Bedrooms>
+              <ViewButton>View Listing</ViewButton>
+            </ListDetails>
+          </Details>
+        </ListImage>
+        <BottomInfo>
+          <Pricing>{listingProp.price}</Pricing>
+          <Location>
+            <FontAwesomeIcon icon="map-marker-alt" size="2x" />
+            <p>{listingProp.city}, {listingProp.state}</p>
+          </Location>
+        </BottomInfo>
+      </List>
     </React.Fragment>
   );
 };
@@ -77,6 +71,8 @@ const ListImage = styled.div`
   padding: 1.5rem;
   position: relative;
   height: 18rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
+    url('https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg');
   background-size: cover;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -111,14 +107,12 @@ const Details = styled.div`
 const UserDetails = styled.div`
   display: flex;
 `;
-const UserImg = styled.div`
+const UserImg = styled.img`
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
   border: 1px solid ${Colors.white};
   display: inline-block;
-  /* background-image: url('https://www.telegraph.co.uk/content/dam/news/2017/11/22/TELEMMGLPICT000147365976_trans_NvBQzQNjv4Bq3XmyF3YIL3K1caQxZsZv2Ssm-UOV8_Q90I8_c5Af0yY.jpeg?imwidth=450'); */
-  background-size: cover;
 `;
 const UserInfo = styled.div`
   margin-left: 2rem;
@@ -142,17 +136,12 @@ const PostDate = styled.span`
 
 const Space = styled.div`
   margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
   p {
-    margin: 0 0 0 0.5rem;
+    margin: 0;
   }
 `;
 const Bedrooms = styled.div`
   /* background: brown; */
-  span {
-    margin-left: 0.5rem;
-  }
 `;
 const ViewButton = styled.button`
   margin-top: 1rem;

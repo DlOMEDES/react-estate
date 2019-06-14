@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { GlobalStyle } from './utils/GlobalStyle';
 import Navbar from './components/nav/Navbar';
-// import Filtering from './components/filter/Filtering';
 import Listings from './components/listing/Listings';
-import { Colors } from './utils/Colors';
 import ContentSection from './components/layout/ContentSection';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -14,23 +12,21 @@ import {
   faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import ListingData from './data/ListingData';
-import styled from 'styled-components';
-import Prices from './components/filter/Prices';
-import FloorSpace from './components/filter/FloorSpace';
-import Filters from './components/filter/Filters';
-import Extras from './components/filter/Extras';
+import Pagination from './components/layout/Pagination';
+import Filters from './components/filters/Filters';
 
 export default class App extends Component {
   state = {
     minPrice: 0,
     maxPrice: 999999,
     minFloorSpace: 0,
-    maxFloorSpace: null,
+    maxFloorSpace: 999999,
     elevator: false,
     swimmingPool: false,
     finishedBasement: false,
     gym: false,
-    ListingData
+    ListingData,
+    filteredData: ListingData
   };
 
   inputChange = event => {
@@ -42,8 +38,20 @@ export default class App extends Component {
       {
         [name]: value
       },
-      () => console.log(this.state)
+      () => {
+        this.filterData();
+      }
     );
+  };
+
+  filterData = () => {
+    const newData = this.state.ListingData.filter(item => {
+      return item.price >= this.state.minPrice;
+    });
+    this.setState({
+      filteredData: newData
+    });
+    console.log(this.state);
   };
 
   render() {
@@ -52,22 +60,15 @@ export default class App extends Component {
         <GlobalStyle />
         <Navbar />
         <ContentSection>
-          <FilterContainer>
-            <Filters inputChange={this.inputChange} />
-            <Prices inputChange={this.inputChange} globalState={this.state} />
-            <FloorSpace inputChange={this.inputChange} />
-            <Extras inputChange={this.inputChange} />
-          </FilterContainer>
-          <Listings ListingData={this.state.ListingData}/>
+          <Filters inputChange={this.inputChange} stateProp={this.state} />
+          <Listings
+            listingProp={this.state.filteredData}
+            stateProp={this.state}
+          />
         </ContentSection>
+        <Pagination />
       </React.Fragment>
     );
   }
 }
 library.add(faBed, faThList, faTh, faSquare, faMapMarkerAlt);
-
-const FilterContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  background: ${Colors.lightGrey};
-`;

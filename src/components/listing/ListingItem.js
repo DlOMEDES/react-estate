@@ -5,23 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import faker from 'faker';
 
-const ResultItem = ({...listingProp}) => {
+const ResultItem = ({ ...listingProp }) => {
   const userName = faker.internet.userName();
   const avatar = faker.internet.avatar();
-  // const date = faker.date.past();
 
-  
   return (
     <React.Fragment>
       <List>
         <ListImage
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${listingProp.image})`
-          }}>
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${
+              listingProp.image
+            })`
+          }}
+        >
           <Address>{listingProp.address}</Address>
           <Details>
             <UserDetails>
-              <UserImg src={avatar}/>
+              <UserImg src={avatar} />
               <UserInfo>
                 <Name>{userName}</Name>
                 <PostDate>Posted on: date here</PostDate>
@@ -43,7 +44,9 @@ const ResultItem = ({...listingProp}) => {
           <Pricing>{listingProp.price}</Pricing>
           <Location>
             <FontAwesomeIcon icon="map-marker-alt" size="2x" />
-            <p>{listingProp.city}, {listingProp.state}</p>
+            <p>
+              {listingProp.city}, {listingProp.state}
+            </p>
           </Location>
         </BottomInfo>
       </List>

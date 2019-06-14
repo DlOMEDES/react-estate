@@ -47,7 +47,7 @@ class Extras extends React.Component {
 
 export default Extras;
 
-const ExtraContainer = styled.section`
+const ExtraContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 20rem;

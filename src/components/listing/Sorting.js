@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Sorting = () => {
+const Sorting = ({ itemProp }) => {
   return (
     <React.Fragment>
       <SortContainer>
         <Found>
-          <p>420 Results Found</p>
+          <p>Results Found: ?</p>
         </Found>
         <SortOptions>
           <SelectSort>
@@ -37,6 +37,7 @@ const SortContainer = styled.section`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
+  width: 94.5%;
 `;
 const View = styled.div`
   .th-list {

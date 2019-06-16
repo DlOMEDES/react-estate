@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../utils/Colors';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import styled from "styled-components";
+import { Colors } from "../../utils/Colors";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import faker from 'faker';
+import faker from "faker";
 
 const ResultItem = ({ ...listingProp }) => {
   const userName = faker.internet.userName();
@@ -56,10 +56,11 @@ const ResultItem = ({ ...listingProp }) => {
 export default ResultItem;
 
 const List = styled.div`
-  width: 32%;
+  width: 30%;
   border-radius: 0.5rem;
   margin-bottom: 6rem;
   box-shadow: 10px 10px 10px 0px rgb(224, 224, 224);
+  margin: 0 3rem 3rem 0;
 `;
 
 const Address = styled.span`
@@ -75,7 +76,7 @@ const ListImage = styled.div`
   position: relative;
   height: 18rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
-    url('https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg');
+    url("https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg");
   background-size: cover;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;

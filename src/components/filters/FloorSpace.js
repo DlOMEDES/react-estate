@@ -1,29 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-class FloorSpace extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <FloorContainer>
-          <h3>Floor Space</h3>
-          <FloorLabel htmlFor="FloorSpace">
-            <input
-              type="text"
-              name="minFloorSpace"
-              onChange={this.props.inputChange}
-            />
-            <input
-              type="text"
-              name="maxFloorSpace"
-              onChange={this.props.inputChange}
-            />
-          </FloorLabel>
-        </FloorContainer>
-      </React.Fragment>
-    );
-  }
-}
+const FloorSpace = ({ inputProp, minFloor, maxFloor }) => {
+  return (
+    <React.Fragment>
+      <FloorContainer>
+        <h3>Floor Space</h3>
+        <FloorLabel htmlFor="FloorSpace">
+          <input
+            type="text"
+            name="minFloorSpace"
+            value={minFloor}
+            onChange={inputProp}
+          />
+          <input
+            type="text"
+            name="maxFloorSpace"
+            value={maxFloor}
+            onChange={inputProp}
+          />
+        </FloorLabel>
+      </FloorContainer>
+    </React.Fragment>
+  );
+};
 
 export default FloorSpace;
 

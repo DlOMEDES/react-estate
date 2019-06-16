@@ -1,23 +1,26 @@
-import React from 'react';
-import Location from './Location';
-import Prices from './Prices';
-import FloorSpace from './FloorSpace';
-import Extras from './Extras';
-import styled from 'styled-components';
+import React from "react";
+import Location from "./Location";
+import Prices from "./Prices";
+import FloorSpace from "./FloorSpace";
+import Extras from "./Extras";
+import styled from "styled-components";
 
-const Filter = ({ ...filterProp }) => {
-  console.log(filterProp);
+const Filter = ({ inputChange, stateProp }) => {
   return (
     <StyledSection>
-      <Location />
+      <Location
+        neighbourhood={stateProp.neighbourhood}
+        inputProp={inputChange}
+      />
       <Prices
-        minProp={filterProp.stateProp.minPrice}
-        maxProp={filterProp.stateProp.maxPrice}
-        inputProp={filterProp.inputChange}
+        minProp={stateProp.minPrice}
+        maxProp={stateProp.maxPrice}
+        inputProp={inputChange}
       />
       <FloorSpace
-        minFloor={filterProp.stateProp.minFloorSpace}
-        maxFloor={filterProp.stateProp.maxFloorSpace}
+        minFloor={stateProp.minFloorSpace}
+        maxFloor={stateProp.maxFloorSpace}
+        inputProp={inputChange}
       />
       <Extras />
     </StyledSection>

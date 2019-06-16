@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import SearchBar from './SearchBar';
-import Sorting from './Sorting';
-import ListingItem from './ListingItem';
+import React from "react";
+import styled from "styled-components";
+import SearchBar from "./SearchBar";
+import Sorting from "./Sorting";
+import ListingItem from "./ListingItem";
 
 class Listings extends React.Component {
   render() {
@@ -23,7 +23,7 @@ class Listings extends React.Component {
           rooms={item.rooms}
           price={item.price}
           floorspace={item.floorspace}
-          extras={['elevator', 'gym']}
+          extras={["elevator", "gym"]}
           hometype={item.home}
         />
       );
@@ -47,6 +47,6 @@ const ListingsWrapper = styled.section`
 `;
 const ItemsContainer = styled.section`
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   flex-wrap: wrap;
 `;

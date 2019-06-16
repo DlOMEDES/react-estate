@@ -1,35 +1,37 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-class Filters extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <FilterContainer>
-          <h3>Filters</h3>
-          <FilterLabel>
-            <Select name="Neighbourhood" onChange={this.props.inputChange}>
-              <option value="Miami">Miami</option>
-              <option value="Philadelphia">Philadelphia</option>
-              <option value="New York">New York</option>
-            </Select>
-            <Select name="Hometype" onChange={this.props.inputChange}>
-              <option>Apartment</option>
-              <option>Studio</option>
-              <option>House</option>
-              <option>Ranch</option>
-            </Select>
-            <Select name="Bedrooms" onChange={this.props.inputChange}>
-              <option>1 Bedroom</option>
-              <option>2 Bedrooms</option>
-              <option>3 Bedrooms</option>
-            </Select>
-          </FilterLabel>
-        </FilterContainer>
-      </React.Fragment>
-    );
-  }
-}
+const Filters = ({ neighbourhood, inputProp }) => {
+  return (
+    <React.Fragment>
+      <FilterContainer>
+        <h3>Filters</h3>
+        <FilterLabel>
+          <Select
+            name="Neighbourhood"
+            onChange={inputProp}
+            value={neighbourhood}
+          >
+            <option value="Miami">Miami</option>
+            <option value="Philadelphia">Philadelphia</option>
+            <option value="New York">New York</option>
+          </Select>
+          <Select name="Hometype" onChange={inputProp}>
+            <option>Apartment</option>
+            <option>Studio</option>
+            <option>House</option>
+            <option>Ranch</option>
+          </Select>
+          <Select name="Bedrooms" onChange={inputProp}>
+            <option>1 Bedroom</option>
+            <option>2 Bedrooms</option>
+            <option>3 Bedrooms</option>
+          </Select>
+        </FilterLabel>
+      </FilterContainer>
+    </React.Fragment>
+  );
+};
 
 export default Filters;
 

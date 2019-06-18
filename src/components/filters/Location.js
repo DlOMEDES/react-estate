@@ -1,33 +1,34 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const Filters = ({ neighbourhood, inputProp }) => {
+const Filters = ({ city, inputProp, bedroom, hometype }) => {
   return (
     <React.Fragment>
       <FilterContainer>
         <h3>Filters</h3>
-        <FilterLabel>
-          <Select
-            name="Neighbourhood"
-            onChange={inputProp}
-            value={neighbourhood}
-          >
-            <option value="Miami">Miami</option>
-            <option value="Philadelphia">Philadelphia</option>
-            <option value="New York">New York</option>
-          </Select>
-          <Select name="Hometype" onChange={inputProp}>
-            <option>Apartment</option>
-            <option>Studio</option>
-            <option>House</option>
-            <option>Ranch</option>
-          </Select>
-          <Select name="Bedrooms" onChange={inputProp}>
-            <option>1 Bedroom</option>
-            <option>2 Bedrooms</option>
-            <option>3 Bedrooms</option>
-          </Select>
-        </FilterLabel>
+        <FilterLabel>City</FilterLabel>
+        <Select name="city" onChange={inputProp} value={city}>
+          <option value="All">All</option>
+          <option value="Miami">Miami</option>
+          <option value="Philadelphia">Philadelphia</option>
+          <option value="New York">New York</option>
+        </Select>
+        <FilterLabel>Hometype</FilterLabel>
+        <Select name="hometype" onChange={inputProp} value={hometype}>
+          <option value="All">All</option>
+          <option value="Apartment">Apartment</option>
+          <option value="Studio">Studio</option>
+          <option value="House">House</option>
+          <option value="Ranch">Ranch</option>
+        </Select>
+        <FilterLabel>Bedroom</FilterLabel>
+        <Select name="bedroom" onChange={inputProp}>
+          <option value="1">1+ Bedroom</option>
+          <option value="2">2+ Bedrooms</option>
+          <option value="3">3+ Bedrooms</option>
+          <option value="4">4+ Bedrooms</option>
+          <option value="5">5+ Bedrooms</option>
+        </Select>
       </FilterContainer>
     </React.Fragment>
   );

@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Sorting = ({ itemProp }) => {
   return (
     <React.Fragment>
       <SortContainer>
         <Found>
-          <p>Results Found: ?</p>
+          <p>11 Results Found</p>
         </Found>
         <SortOptions>
           <SelectSort>

@@ -17,8 +17,8 @@ import Filters from './components/filters/Filters';
 
 export default class App extends Component {
   state = {
-    city: 'All',
-    hometype: 'All',
+    city: '',
+    hometype: '',
     bedroom: '',
     minPrice: 0,
     maxPrice: 9999999,
@@ -50,11 +50,11 @@ export default class App extends Component {
   render() {
     let filteredData = this.state.ListingData.filter(item => {
       // SORT VIA CITY
-      if (this.state.city !== 'All') {
+      if (this.state.city !== '') {
         return item.city === this.state.city;
       }
       // SORT VIA HOMETYPE
-      if (this.state.hometype !== 'All') {
+      if (this.state.hometype !== '') {
         return item.hometype === this.state.hometype;
       }
       // SORT VIA BEDROOMS

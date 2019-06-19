@@ -6,14 +6,14 @@ const Filters = ({ city, inputProp, bedroom, hometype }) => {
     <React.Fragment>
       <FilterContainer>
         <h3>Filters</h3>
-        <FilterLabel>City</FilterLabel>
+        <label>City</label>
         <Select name="city" onChange={inputProp} value={city}>
           <option value="All">All</option>
           <option value="Miami">Miami</option>
           <option value="Philadelphia">Philadelphia</option>
           <option value="New York">New York</option>
         </Select>
-        <FilterLabel>Hometype</FilterLabel>
+        <label>Hometype</label>
         <Select name="hometype" onChange={inputProp} value={hometype}>
           <option value="All">All</option>
           <option value="Apartment">Apartment</option>
@@ -21,7 +21,7 @@ const Filters = ({ city, inputProp, bedroom, hometype }) => {
           <option value="House">House</option>
           <option value="Ranch">Ranch</option>
         </Select>
-        <FilterLabel>Bedroom</FilterLabel>
+        <label>Bedroom</label>
         <Select name="bedroom" onChange={inputProp}>
           <option value="1">1+ Bedroom</option>
           <option value="2">2+ Bedrooms</option>
@@ -42,11 +42,6 @@ const FilterContainer = styled.div`
   width: 20rem;
   margin: 0 auto;
   font-size: 1.6rem;
-`;
-
-const FilterLabel = styled.label`
-  display: flex;
-  flex-direction: column;
 `;
 
 const Select = styled.select`

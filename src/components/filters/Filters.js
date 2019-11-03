@@ -1,9 +1,9 @@
-import React from 'react';
-import Location from './Location';
-import Prices from './Prices';
-import FloorSpace from './FloorSpace';
-import Extras from './Extras';
-import styled from 'styled-components';
+import React from "react";
+import Location from "./Location";
+import Prices from "./Prices";
+import FloorSpace from "./FloorSpace";
+import Extras from "./Extras";
+import styled from "styled-components";
 
 const Filter = ({ inputChange, stateProp }) => {
   return (
@@ -24,7 +24,13 @@ const Filter = ({ inputChange, stateProp }) => {
         maxFloor={stateProp.maxFloorSpace}
         inputProp={inputChange}
       />
-      <Extras />
+      <Extras
+        inputChange={inputChange}
+        // elevator={stateProp.elevator}
+        // swimmingPool={stateProp.swimmingPool}
+        // finishedBasement={stateProp.finishedBasement}
+        // gym={stateProp.gym}
+      />
     </StyledSection>
   );
 };

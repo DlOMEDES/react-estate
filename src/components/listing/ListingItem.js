@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../utils/Colors';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import styled from "styled-components";
+import { Colors } from "../../utils/Colors";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import faker from 'faker';
+import faker from "faker";
 
-const ResultItem = ({ ...listingProp }) => {
+const ListingItem = ({ ...itemProps }) => {
   const userName = faker.internet.userName();
   const avatar = faker.internet.avatar();
 
@@ -14,12 +14,10 @@ const ResultItem = ({ ...listingProp }) => {
       <List>
         <ListImage
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${
-              listingProp.image
-            })`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(${itemProps.image})`
           }}
         >
-          <Address>{listingProp.address}</Address>
+          <Address>{itemProps.address}</Address>
           <Details>
             <UserDetails>
               <UserImg src={avatar} />
@@ -30,22 +28,22 @@ const ResultItem = ({ ...listingProp }) => {
             </UserDetails>
             <ListDetails>
               <Space>
-                <p>{listingProp.floorspace} ft&sup2;</p>
+                <p>{itemProps.floorspace} ft&sup2;</p>
               </Space>
               <Bedrooms>
                 <FontAwesomeIcon icon="bed" />
-                <span> {listingProp.rooms}</span>
+                <span> {itemProps.rooms}</span>
               </Bedrooms>
               <ViewButton>View Listing</ViewButton>
             </ListDetails>
           </Details>
         </ListImage>
         <BottomInfo>
-          <Pricing>${listingProp.price}</Pricing>
+          <Pricing>${itemProps.price}</Pricing>
           <Location>
             <FontAwesomeIcon icon="map-marker-alt" size="2x" />
             <p>
-              {listingProp.city}, {listingProp.state}
+              {itemProps.city}, {itemProps.state}
             </p>
           </Location>
         </BottomInfo>
@@ -53,7 +51,7 @@ const ResultItem = ({ ...listingProp }) => {
     </React.Fragment>
   );
 };
-export default ResultItem;
+export default ListingItem;
 
 const List = styled.div`
   width: 30%;
@@ -76,7 +74,7 @@ const ListImage = styled.div`
   position: relative;
   height: 18rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
-    url('https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg');
+    url("https://odis.homeaway.com/odis/listing/2f98571f-2ade-4f9f-b91d-4c8f78a233e2.c10.jpg");
   background-size: cover;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;

@@ -1,49 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-class Extras extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <ExtraContainer>
-          <h3>Extras</h3>
-          <ExtraLabel htmlFor="Elevator">
-            <Title>Elevator</Title>
-            <Checkbox
-              name="elevator"
-              type="checkbox"
-              onChange={this.props.inputChange}
-            />
-          </ExtraLabel>
-          <ExtraLabel htmlFor="swimmingPool">
-            <Title>Swimming Pool</Title>
-            <Checkbox
-              name="swimmingPool"
-              type="checkbox"
-              onChange={this.props.inputChange}
-            />
-          </ExtraLabel>
-          <ExtraLabel htmlFor="finishedBasement">
-            <Title>Finished Basement</Title>
-            <Checkbox
-              name="finishedBasement"
-              type="checkbox"
-              onChange={this.props.inputChange}
-            />
-          </ExtraLabel>
-          <ExtraLabel htmlFor="gym">
-            <Title>Gym</Title>
-            <Checkbox
-              name="gym"
-              type="checkbox"
-              onChange={this.props.inputChange}
-            />
-          </ExtraLabel>
-        </ExtraContainer>
-      </React.Fragment>
-    );
-  }
-}
+const Extras = ({
+  // elevator,
+  // swimmingPool,
+  // finishedBasement,
+  // gym,
+  inputChange
+}) => {
+  return (
+    <React.Fragment>
+      <ExtraContainer>
+        <h3>Extras</h3>
+        <ExtraLabel htmlFor="Elevator">
+          <Title>Elevator</Title>
+          <Checkbox name="elevator" type="checkbox" onChange={inputChange} />
+        </ExtraLabel>
+        <ExtraLabel htmlFor="swimmingPool">
+          <Title>Swimming Pool</Title>
+          <Checkbox
+            name="swimmingPool"
+            type="checkbox"
+            onChange={inputChange}
+          />
+        </ExtraLabel>
+        <ExtraLabel htmlFor="finishedBasement">
+          <Title>Finished Basement</Title>
+          <Checkbox
+            name="finishedBasement"
+            type="checkbox"
+            onChange={inputChange}
+          />
+        </ExtraLabel>
+        <ExtraLabel htmlFor="gym">
+          <Title>Gym</Title>
+          <Checkbox name="gym" type="checkbox" onChange={inputChange} />
+        </ExtraLabel>
+      </ExtraContainer>
+    </React.Fragment>
+  );
+};
 
 export default Extras;
 

@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-const Filters = ({ city, inputProp, bedroom, hometype }) => {
+const Location = ({ city, inputProp, bedroom, hometype }) => {
   return (
     <React.Fragment>
       <FilterContainer>
-        <h3>Filters</h3>
+        <h3>Location</h3>
         <label>City</label>
         <Select name="city" onChange={inputProp} value={city}>
           <option value="All">All</option>
@@ -34,7 +34,7 @@ const Filters = ({ city, inputProp, bedroom, hometype }) => {
   );
 };
 
-export default Filters;
+export default Location;
 
 const FilterContainer = styled.div`
   display: flex;

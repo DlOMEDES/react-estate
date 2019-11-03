@@ -6,13 +6,13 @@ import ListingItem from "./ListingItem";
 
 class Listings extends React.Component {
   render() {
-    const { listingProp } = this.props;
+    const { filteredData } = this.props;
 
     // if (listingProp === undefined || listingProp.length === 0) {
     //   return `Filter doesn't match any listings`;
     // }
 
-    const listingsItem = listingProp.map((item, id) => {
+    const listingsItem = filteredData.map((item, id) => {
       return (
         <ListingItem
           key={id}
@@ -47,6 +47,5 @@ const ListingsWrapper = styled.section`
 `;
 const ItemsContainer = styled.section`
   display: flex;
-  // justify-content: space-between;
   flex-wrap: wrap;
 `;

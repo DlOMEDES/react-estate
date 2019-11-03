@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../utils/Colors';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Colors } from "../../utils/Colors";
+import LogoImg from "../../images/logo-img-min.png";
 
 export default class Navbar extends Component {
   render() {
@@ -8,7 +9,9 @@ export default class Navbar extends Component {
       <React.Fragment>
         <Header>
           <NavContainer>
-            <Logo href="#">Logo</Logo>
+            <Logo href="#">
+              <img src={LogoImg} alt="" />
+            </Logo>
             <Nav>
               <Navlinks href="#">Create Ads</Navlinks>
               <Navlinks href="#">About Us</Navlinks>
@@ -37,6 +40,9 @@ const Header = styled.header`
 
 const Logo = styled.a`
   width: 50px;
+  img {
+    width: 50px;
+  }
 `;
 
 const Nav = styled.nav`

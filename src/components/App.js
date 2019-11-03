@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
-import { GlobalStyle } from './utils/GlobalStyle';
-import Navbar from './components/nav/Navbar';
-import Listings from './components/listing/Listings';
-import ContentSection from './components/layout/ContentSection';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import React, { Component } from "react";
+import { GlobalStyle } from "../utils/GlobalStyle";
+import Navbar from "./nav/Navbar";
+import Listings from "./listing/Listings";
+import ContentSection from "./layout/ContentSection";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faBed,
   faThList,
   faTh,
   faSquare,
   faMapMarkerAlt
-} from '@fortawesome/free-solid-svg-icons';
-import ListingData from './data/ListingData';
-import Pagination from './components/layout/Pagination';
-import Filters from './components/filters/Filters';
+} from "@fortawesome/free-solid-svg-icons";
+import ListingData from "../data/ListingData";
+import Pagination from "./layout/Pagination";
+import Filters from "./filters/Filters";
 
 export default class App extends Component {
   state = {
-    city: '',
-    hometype: '',
-    bedroom: '',
+    ListingData,
+    city: "",
+    hometype: "",
+    bedroom: "",
     minPrice: 0,
     maxPrice: 9999999,
     minFloorSpace: 0,
@@ -27,15 +28,14 @@ export default class App extends Component {
     elevator: false,
     swimmingPool: false,
     finishedBasement: false,
-    gym: false,
-    ListingData
+    gym: false
     // filterData: ListingData
   };
 
   inputChange = event => {
     const target = event.target;
     const name = target.name;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === "checkbox" ? target.checked : target.value;
 
     this.setState(
       {
@@ -49,16 +49,16 @@ export default class App extends Component {
 
   render() {
     let filteredData = this.state.ListingData.filter(item => {
-      // SORT VIA CITY
-      if (this.state.city !== '') {
+      // SORT BY CITY
+      if (this.state.city !== "") {
         return item.city === this.state.city;
       }
-      // SORT VIA HOMETYPE
-      if (this.state.hometype !== '') {
+      // SORT BY HOMETYPE
+      if (this.state.hometype !== "") {
         return item.hometype === this.state.hometype;
       }
-      // SORT VIA BEDROOMS
-      if (this.state.bedroom !== '') {
+      // SORT BY BEDROOMS
+      if (this.state.bedroom !== "") {
         return item.rooms >= this.state.bedroom;
       }
 
@@ -75,7 +75,7 @@ export default class App extends Component {
         <Navbar />
         <ContentSection>
           <Filters inputChange={this.inputChange} stateProp={this.state} />
-          <Listings listingProp={filteredData} />
+          <Listings filteredData={filteredData} />
         </ContentSection>
         <Pagination />
       </React.Fragment>

@@ -54,11 +54,15 @@ const ListingItem = ({ ...itemProps }) => {
 export default ListingItem;
 
 const List = styled.div`
-  width: 30%;
+  width: 300px;
   border-radius: 0.5rem;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
   box-shadow: 10px 10px 10px 0px rgb(224, 224, 224);
-  margin: 0 3rem 3rem 0;
+  margin-right: 31px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
 `;
 
 const Address = styled.span`
@@ -124,16 +128,18 @@ const ListDetails = styled.div`
   width: 20rem;
   margin: 2rem 7.2rem;
 `;
-const Name = styled.span`
+const Name = styled.p`
   display: block;
   color: rgb(255, 255, 255, 1);
   font-weight: 300;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.6rem;
 `;
-const PostDate = styled.span`
+const PostDate = styled.p`
   display: block;
   color: rgb(255, 255, 255, 0.7);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  margin: 0;
 `;
 
 const Space = styled.div`

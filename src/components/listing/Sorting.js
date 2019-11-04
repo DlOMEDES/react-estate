@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Sorting = ({ itemProp }) => {
   return (
@@ -37,7 +37,6 @@ const SortContainer = styled.section`
   display: flex;
   justify-content: space-between;
   margin-bottom: 3rem;
-  width: 94.5%;
 `;
 const View = styled.div`
   .th-list {

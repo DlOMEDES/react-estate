@@ -43,7 +43,7 @@ class Listings extends React.Component {
 export default Listings;
 
 const ListingsWrapper = styled.section`
-  padding: 1.5rem 3rem;
+  padding: 4.5rem 13rem;
 `;
 const ItemsContainer = styled.section`
   display: flex;

@@ -5,13 +5,23 @@ import Sorting from "./Sorting";
 import ListingItem from "./ListingItem";
 
 class Listings extends React.Component {
+  onTextChange = event => {
+    this.setState(
+      {
+        text: event.target.value
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+
+  onFormSubmit = text => {
+    console.log(text);
+  };
+
   render() {
     const { filteredData } = this.props;
-
-    // if (listingProp === undefined || listingProp.length === 0) {
-    //   return `Filter doesn't match any listings`;
-    // }
-
     const listingsItem = filteredData.map((item, id) => {
       return (
         <ListingItem
@@ -28,11 +38,12 @@ class Listings extends React.Component {
         />
       );
     });
+
     return (
       <React.Fragment>
         <ListingsWrapper>
-          <SearchBar />
-          <Sorting />
+          <SearchBar onFormSubmit={this.onFormSubmit} />
+          <Sorting onTextChange={this.onTextChange} />
           <ItemsContainer>{listingsItem}</ItemsContainer>
         </ListingsWrapper>
       </React.Fragment>

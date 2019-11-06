@@ -29,7 +29,6 @@ export default class App extends Component {
     swimmingPool: false,
     finishedBasement: false,
     gym: false
-    // filterData: ListingData
   };
 
   inputChange = event => {
@@ -48,25 +47,25 @@ export default class App extends Component {
   };
 
   render() {
-    let filteredData = this.state.ListingData.filter(item => {
+    let filteredData = this.state.ListingData.filter(listingItem => {
       // SORT BY CITY
       if (this.state.city !== "") {
-        return item.city === this.state.city;
+        return listingItem.city === this.state.city;
       }
       // SORT BY HOMETYPE
       if (this.state.hometype !== "") {
-        return item.hometype === this.state.hometype;
+        return listingItem.hometype === this.state.hometype;
       }
       // SORT BY BEDROOMS
       if (this.state.bedroom !== "") {
-        return item.rooms >= this.state.bedroom;
+        return listingItem.rooms >= this.state.bedroom;
       }
 
       return (
-        item.price >= this.state.minPrice &&
-        item.price <= this.state.maxPrice &&
-        item.floorspace >= this.state.minFloorSpace &&
-        item.floorspace <= this.state.maxFloorSpace
+        listingItem.price >= this.state.minPrice &&
+        listingItem.price <= this.state.maxPrice &&
+        listingItem.floorspace >= this.state.minFloorSpace &&
+        listingItem.floorspace <= this.state.maxFloorSpace
       );
     });
     return (
@@ -75,7 +74,11 @@ export default class App extends Component {
         <Navbar />
         <ContentSection>
           <Filters inputChange={this.inputChange} stateProp={this.state} />
-          <Listings filteredData={filteredData} />
+          <Listings
+            inputChange={this.inputChange}
+            filteredData={filteredData}
+            onTextSubmit={this.onTextSubmit}
+          />
         </ContentSection>
         <Pagination />
       </React.Fragment>

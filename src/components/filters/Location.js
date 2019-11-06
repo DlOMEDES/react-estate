@@ -23,6 +23,7 @@ const Location = ({ city, inputProp, bedroom, hometype }) => {
         </Select>
         <label>Bedroom</label>
         <Select name="bedroom" onChange={inputProp}>
+          <option value="All">All</option>
           <option value="1">1+ Bedroom</option>
           <option value="2">2+ Bedrooms</option>
           <option value="3">3+ Bedrooms</option>

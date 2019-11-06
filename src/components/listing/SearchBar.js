@@ -1,19 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Colors } from '../../utils/Colors';
+import React from "react";
+import styled from "styled-components";
+import { Colors } from "../../utils/Colors";
 
-const SearchBar = () => {
-  return (
-    <React.Fragment>
-      <SearchContainer>
-        <Search>
-          <input type="text" name="search" placeholder="Search Listings" />
-        </Search>
-      </SearchContainer>
-    </React.Fragment>
-  );
-};
-export default SearchBar;
+export default class SearchBar extends React.Component {
+  state = {
+    text: ""
+  };
+
+  onTextChange = event => {
+    this.setState({ text: event.target.value }, () => {
+      // console.log(this.state);
+    });
+  };
+
+  formSubmit = event => {
+    event.preventDefault();
+
+    this.props.onFormSubmit(this.state.text);
+    // pass in callback from main app component
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <SearchContainer>
+          <form onSubmit={this.formSubmit} action="">
+            <Search>
+              <input
+                type="text"
+                value={this.state.text}
+                onChange={this.onTextChange}
+                name="search"
+                placeholder="Search Listings"
+              />
+            </Search>
+          </form>
+        </SearchContainer>
+      </React.Fragment>
+    );
+  }
+}
 
 const SearchContainer = styled.section``;
 

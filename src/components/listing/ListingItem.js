@@ -54,15 +54,15 @@ const ListingItem = ({ ...itemProps }) => {
 export default ListingItem;
 
 const List = styled.div`
-  width: 300px;
+  width: 30%;
   border-radius: 0.5rem;
   margin-bottom: 5rem;
   box-shadow: 10px 10px 10px 0px rgb(224, 224, 224);
   margin-right: 31px;
 
-  &:nth-child(4n) {
+  /* &:nth-child(4n) {
     margin-right: 0;
-  }
+  } */
 `;
 
 const Address = styled.span`
